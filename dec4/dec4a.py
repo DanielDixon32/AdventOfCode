@@ -13,7 +13,7 @@ def checkValidPos(i, j):
         (1, 1),
         (-1, -1),
         (1, -1),
-        (-1, 1),
+        (-1, 1)
     ]
     
     for di, dj in directions:
