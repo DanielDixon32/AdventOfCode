@@ -20,7 +20,7 @@ def get_valid_adjacent_coords(i, j):
         elif grid[new_i][new_j] - grid[i][j] == 1:
             to_visit.append((new_i, new_j))
     return to_visit
-        
+
 def explore(i, j):
     visited_peaks = set()
     score = 0
