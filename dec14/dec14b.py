@@ -61,7 +61,6 @@ def print_image(writes):
         print(f'Writes: {writes}\n')
 
 for i in range(WIDTH * HEIGHT):
-    min = 10**10
     step()
     safety_factor = compute_safety_factor()
     
