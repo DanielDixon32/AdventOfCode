@@ -1,13 +1,6 @@
 import re 
 
-with open('input.txt') as file:
-    content = file.read()
-    
-content = content.split("\n\n")
-registers = list(map(int, re.findall(r"-?\d+", content[0])))
-program = list(map(int, re.findall(r"-?\d+", content[1])))
-
-def evaluate(program, ip=0):
+def evaluate(program, registers, ip=0):
     out = []
     while ip < len(program):
         opcode = program[ip]
@@ -51,5 +44,12 @@ def combo_operand(operand, registers):
     else:
         return operand
 
-result = evaluate(program)
+with open('input.txt') as file:
+    content = file.read()
+    
+content = content.split("\n\n")
+registers = list(map(int, re.findall(r"-?\d+", content[0])))
+program = list(map(int, re.findall(r"-?\d+", content[1])))
+
+result = evaluate(program, registers)
 print(result)
